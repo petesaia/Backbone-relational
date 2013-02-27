@@ -48,6 +48,7 @@
 					<li><a href="#Relation-includeInJSON">includeInJSON</a></li>
 					<li><a href="#Relation-createModels">createModels</a></li>
 					<li><a href="#Relation-reverseRelation">reverseRelation</a></li>
+					<li><a href="#Relation-autoFetch">autoFetch</a></li>
 				</ul>
 			</li>
 			<li><a href="#RelationalModel-subModelTypes">subModelTypes</a></li>
@@ -841,26 +842,18 @@ MyModel.setup()
 			will be <strong>HasOne</strong>.
 		</p>
 		
-		<h2 id="Store">Backbone.Relational.Store</h2>
+		<h2 id="Store">Backbone.Store</h2>
 		<p>
-			The <strong>Store</strong> is a global model cache. Per application, one instance is created, which is accessible as
-			<q>Backbone.store</q> (much like <q>Backbone.History</q>).
+			The <strong>Store</strong> is a global model cache. Per application, one instance is created (much like <q>Backbone.History</q>),
+			which is accessible as <q>Backbone.Relational.store</q> .
 		</p>
 
 		<h4 class="code" id="Store-addModelScope">
-			addModelScope<code>Backbone.store.addModelScope( scope&lt;object&gt; )</code>
+			addModelScope<code>Backbone.Relational.store.addModelScope( scope&lt;object&gt; )</code>
 		</h4>
 		<p>
 			When working in an environment without a shared global scope (like <q>window</q> is in a browser), you'll need
 			to tell the <q>store</q> where your models are defined, so it can resolve them to create and maintain relations. 
-		</p>
-
-		<h4 class="code" id="Store-reset">
-			reset<code>Backbone.store.reset()</code>
-		</h4>
-		<p>
-			Reset the <q>store</q> to it's original state. This will disable relations for all models created up to this point,
-			remove added model scopes, and removed all internal store collections.
 		</p>
 
 		<h2 id="examples">Examples</h2>
